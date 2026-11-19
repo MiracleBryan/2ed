@@ -46,8 +46,46 @@ if (prefersReducedMotion) {
   revealItems.forEach((item) => observer.observe(item));
 }
 
-// The picture wall uses CSS for hover zoom and depth.
+// Animate the picture wall into depth, then tilt each photo.
 const photoWall = document.querySelector("#photoWall");
+const wallCards = [...document.querySelectorAll(".wall-photo")];
+wallCards.forEach((card, index) => {
+  card.style.setProperty("--wall-delay", `${index * 75}ms`);
+});
+
+if (prefersReducedMotion) {
+  photoWall.classList.add("wall-ready", "wall-settled");
+} else {
+  const wallObserver = new IntersectionObserver(
+    ([entry]) => {
+      if (!entry.isIntersecting) return;
+      photoWall.classList.add("wall-ready");
+      window.setTimeout(() => photoWall.classList.add("wall-settled"), 1300);
+      wallObserver.disconnect();
+    },
+    { threshold: 0.08 }
+  );
+  wallObserver.observe(photoWall);
+}
+
+if (!prefersReducedMotion && window.matchMedia("(pointer: fine)").matches) {
+  wallCards.forEach((card) => {
+    card.addEventListener("pointermove", (event) => {
+      const bounds = card.getBoundingClientRect();
+      const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+      const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+      card.style.setProperty("--wall-rx", `${y * -9}deg`);
+      card.style.setProperty("--wall-ry", `${x * 11}deg`);
+      card.style.setProperty("--shine-x", `${(x + 0.5) * 100}%`);
+      card.style.setProperty("--shine-y", `${(y + 0.5) * 100}%`);
+    });
+
+    card.addEventListener("pointerleave", () => {
+      card.style.setProperty("--wall-rx", "0deg");
+      card.style.setProperty("--wall-ry", "0deg");
+    });
+  });
+}
 
 // Give the letter a soft paper-like tilt on larger screens.
 const letterCard = document.querySelector("#letterCard");

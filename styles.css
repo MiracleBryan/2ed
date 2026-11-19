@@ -1604,3 +1604,163 @@ footer {
     display: none;
   }
 }
+
+/* Cinematic 3D motion */
+.heart-scene::before {
+  position: absolute;
+  z-index: 0;
+  width: 72%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  content: "";
+  background: radial-gradient(circle, rgba(255, 66, 113, 0.2), rgba(126, 26, 61, 0.06) 48%, transparent 72%);
+  filter: blur(16px);
+  animation: scene-glow 4s ease-in-out infinite;
+}
+
+.heart-canvas {
+  filter: drop-shadow(0 24px 42px rgba(255, 40, 93, 0.14));
+}
+
+.heart-scene.three-ready .orbit {
+  opacity: 0.28;
+}
+
+.heart-scene.three-ready .heart-shadow {
+  width: 55%;
+  background: rgba(255, 43, 97, 0.38);
+  animation: shadow-pulse 2.55s ease-in-out infinite;
+}
+
+.heart-hint {
+  animation: hint-pulse 2.4s ease-in-out infinite;
+}
+
+.wall-photo {
+  --wall-rx: 0deg;
+  --wall-ry: 0deg;
+  --shine-x: 50%;
+  --shine-y: 50%;
+  opacity: 0;
+  transform: perspective(900px) translateY(54px) rotateX(-12deg) scale(0.94);
+  transition:
+    opacity 700ms ease,
+    border-color 250ms ease,
+    box-shadow 450ms ease,
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--wall-delay, 0ms);
+}
+
+.photo-wall.wall-ready .wall-photo {
+  opacity: 1;
+  transform: perspective(900px) translateY(0) rotateX(var(--wall-rx)) rotateY(var(--wall-ry)) scale(1);
+}
+
+.photo-wall.wall-ready .wall-photo:hover,
+.photo-wall.wall-ready .wall-photo:focus-within {
+  z-index: 4;
+  transform: perspective(900px) translateY(-10px) rotateX(var(--wall-rx)) rotateY(var(--wall-ry)) scale(1.025);
+}
+
+.photo-wall.wall-settled .wall-photo {
+  transition-delay: 0ms;
+}
+
+.wall-photo::after {
+  position: absolute;
+  z-index: 7;
+  inset: 0;
+  border-radius: inherit;
+  content: "";
+  background: radial-gradient(circle at var(--shine-x) var(--shine-y), rgba(255, 255, 255, 0.22), transparent 34%);
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  transition: opacity 300ms ease;
+}
+
+.wall-photo:hover::after,
+.wall-photo:focus-within::after {
+  opacity: 1;
+}
+
+.wall-photo .wall-label,
+.wall-photo .wall-number {
+  transform: translateY(5px);
+  transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wall-photo:hover .wall-label,
+.wall-photo:hover .wall-number,
+.wall-photo:focus-within .wall-label,
+.wall-photo:focus-within .wall-number {
+  transform: translateY(0);
+}
+
+@keyframes scene-glow {
+  0%, 100% { opacity: 0.65; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes shadow-pulse {
+  0%, 100% { opacity: 0.45; transform: rotateX(78deg) scale(0.85); }
+  50% { opacity: 0.8; transform: rotateX(78deg) scale(1.08); }
+}
+
+@keyframes hint-pulse {
+  0%, 100% { opacity: 0.48; letter-spacing: 0.15em; }
+  50% { opacity: 1; letter-spacing: 0.19em; }
+}
+
+/* Fade the WebGL frame into the page without a square edge. */
+.heart-canvas {
+  filter: none;
+  -webkit-mask-image: radial-gradient(ellipse 52% 48% at 50% 48%, #000 42%, rgba(0, 0, 0, 0.86) 62%, rgba(0, 0, 0, 0.3) 82%, transparent 100%);
+  mask-image: radial-gradient(ellipse 52% 48% at 50% 48%, #000 42%, rgba(0, 0, 0, 0.86) 62%, rgba(0, 0, 0, 0.3) 82%, transparent 100%);
+}
+
+/* Heart hover response */
+.heart-scene.heart-hovered .heart-canvas {
+  cursor: pointer;
+}
+
+.heart-scene.heart-hovered .heart-shadow {
+  animation-duration: 0.9s;
+}
+
+.heart-scene.heart-hovered .heart-hint {
+  color: var(--rose-light);
+  text-shadow: 0 0 14px rgba(255, 111, 145, 0.65);
+}
+
+/* Click sequence */
+.heart-scene.heart-bursting::before {
+  animation-duration: 0.72s;
+  filter: blur(10px);
+}
+
+.heart-scene.heart-bursting .heart-shadow {
+  opacity: 0.9;
+  transform: rotateX(78deg) scale(1.22);
+}
+
+.heart-scene.heart-bursting .heart-hint {
+  color: var(--ink);
+  text-shadow: 0 0 20px rgba(255, 111, 145, 0.9);
+}
+
+/* Responsive light and shadow */
+.heart-scene::before {
+  animation: none;
+  opacity: 0.9;
+  transform: translate3d(var(--glow-x, 0), var(--glow-y, 0), 0) scale(var(--glow-scale, 0.94));
+  transition: transform 180ms ease-out, opacity 250ms ease;
+}
+
+.heart-scene.three-ready .heart-shadow,
+.heart-scene.heart-bursting .heart-shadow {
+  animation: none;
+  opacity: var(--shadow-opacity, 0.38);
+  transform: translate3d(var(--shadow-x, 0), var(--shadow-y, 0), 0) rotateX(78deg) scale(var(--shadow-scale, 0.88));
+  transition: transform 180ms ease-out, opacity 180ms ease-out;
+}
