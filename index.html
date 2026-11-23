@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#12070d">
-  <meta name="description" content="A collection of shared memories from two unforgettable years.">
-  <title>Two Years of Memories</title>
+  <meta name="description" content="珍藏两年相伴的时光，以及那些只属于我们的回忆。">
+  <title>两年相伴 · 点滴珍藏</title>
   <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.min.js" defer></script>
   <script src="three-scene.js" defer></script>
@@ -17,23 +17,23 @@
   <div class="ambient ambient-two" aria-hidden="true"></div>
 
   <header class="site-header">
-    <a class="wordmark" href="#top" aria-label="Two years of memories, home">
+    <a class="wordmark" href="#top" aria-label="两年相伴，回忆珍藏，返回首页">
       <span>II</span>
-      <span class="wordmark-copy">years remembered</span>
+      <span class="wordmark-copy">珍藏两年时光</span>
     </a>
-    <a class="nav-link" href="#memories">Picture wall <span aria-hidden="true">↘</span></a>
+    <a class="nav-link" href="#memories">我们的回忆 <span aria-hidden="true">↘</span></a>
   </header>
 
   <main>
     <section class="hero" id="top">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Two years of shared memories</p>
-        <h1>Moments worth<br><em>keeping.</em></h1>
-        <p class="hero-intro">A collection of places we went, things we tried, laughs we shared, and days that became ours.</p>
-        <a class="button" href="#memories">Explore our memories <span aria-hidden="true">↓</span></a>
+        <p class="eyebrow">两年相伴，点滴珍藏</p>
+        <h1>把我们的时光<br><em>好好珍藏。</em></h1>
+        <p class="hero-intro">一起看过的风景、尝试过的新鲜事、分享过的欢笑，以及共同经历过的挫折，都成了只属于我们的故事。</p>
+        <a class="button" href="#memories">重温我们的回忆 <span aria-hidden="true">↓</span></a>
       </div>
 
-      <div class="heart-scene" id="heartScene" aria-label="Interactive three-dimensional heart">
+      <div class="heart-scene" id="heartScene" aria-label="可互动的三维爱心">
         <canvas class="heart-canvas" id="heartCanvas" aria-hidden="true"></canvas>
         <div class="orbit orbit-one" aria-hidden="true"></div>
         <div class="orbit orbit-two" aria-hidden="true"></div>
@@ -42,124 +42,119 @@
         <span class="spark spark-one" aria-hidden="true">✦</span>
         <span class="spark spark-two" aria-hidden="true">✦</span>
         <span class="spark spark-three" aria-hidden="true">✦</span>
-        <span class="heart-hint">Hover for heartbeat · tap for stardust</span>
+        <span class="heart-hint">悬停感受心跳 · 点击洒落星光</span>
       </div>
 
       <div class="scroll-note" aria-hidden="true">
         <span></span>
-        scroll through time
+        沿着时光慢慢回望
       </div>
     </section>
 
-    <section class="numbers section-pad" aria-label="Our time together">
+    <section class="numbers section-pad" aria-label="相伴的时光">
       <article class="number-card reveal">
         <strong>02</strong>
-        <span>years</span>
+        <span>年</span>
       </article>
       <article class="number-card reveal">
         <strong>24</strong>
-        <span>months</span>
+        <span>个月</span>
       </article>
       <article class="number-card reveal">
         <strong>∞</strong>
-        <span>more memories</span>
+        <span>更多回忆</span>
       </article>
     </section>
 
     <section class="memories section-pad" id="memories">
       <div class="section-heading reveal">
         <div>
-          <p class="eyebrow">Our shared story</p>
-          <h2>Little moments.<br>Lasting memories.</h2>
+          <p class="eyebrow">我们的故事</p>
+          <h2>那些小小瞬间，<br>都值得珍藏。</h2>
         </div>
-        <label class="photo-button" for="photoInput">
-          <input id="photoInput" type="file" accept="image/*" multiple>
-          <span aria-hidden="true">＋</span>
-          Add photos
-        </label>
       </div>
 
-      <div class="photo-wall reveal" id="photoWall" aria-label="Our picture wall">
-        <article class="wall-photo wall-large" data-title="The first hello" data-message="Write the story of your first hello here. Add what you noticed, what you felt, and why this day still matters.">
+      <div class="photo-wall reveal" id="photoWall" aria-label="我们的照片墙">
+        <article class="wall-photo wall-large" data-title="一起潜水" data-message="一起在普吉岛潜水，一开始还害怕的不行，后来却玩得很开心">
           <div class="wall-image placeholder-one">
-            <img class="memory-photo" alt="A favorite shared memory">
-            <div class="photo-placeholder"><span>✦</span><strong>Photo 01</strong><small>Your first photo together</small></div>
+            <img class="memory-photo" alt="我们共同的回忆">
+            <div class="photo-placeholder"><span>✦</span><strong>一起潜水</strong><small>我们的海底探险</small></div>
           </div>
-          <button class="memory-open" type="button"><span class="wall-number">01</span><span class="wall-label"><small>Memory one</small><strong>The first hello</strong></span><span class="wall-arrow" aria-hidden="true">↗</span></button>
+          <button class="memory-open" type="button"><span class="wall-number">01</span><span class="wall-label"><small>回忆一</small><strong>一起潜水</strong></span><span class="wall-arrow" aria-hidden="true">↗</span></button>
         </article>
 
-        <article class="wall-photo wall-tall" data-title="Our first date" data-message="Write about your first date here. Add where you went, one funny moment, and the part you never forgot.">
+        <article class="wall-photo wall-tall" data-title="睡梦中的日常" data-message="也不知道这腿立着是怎么睡着的">
           <div class="wall-image placeholder-two">
-            <img class="memory-photo" alt="A favorite shared memory">
-            <div class="photo-placeholder"><span>♥</span><strong>Photo 02</strong><small>Your first date</small></div>
+            <img class="memory-photo" alt="我们共同的回忆">
+            <div class="photo-placeholder"><span>♥</span><strong>每日睡姿大赏</strong><small>看着就臭臭的</small></div>
           </div>
-          <button class="memory-open" type="button"><span class="wall-number">02</span><span class="wall-label"><small>Memory two</small><strong>Our first date</strong></span><span class="wall-arrow" aria-hidden="true">↗</span></button>
+          <button class="memory-open" type="button"><span class="wall-number">02</span><span class="wall-label"><small>回忆二</small><strong>每日睡姿</strong></span><span class="wall-arrow" aria-hidden="true">↗</span></button>
         </article>
 
-        <article class="wall-photo wall-wide" data-title="Our best adventure" data-message="Write about your best trip or adventure here. Add the place, the feeling, and the moment you both still laugh about.">
+        <article class="wall-photo wall-wide" data-title="船上合影" data-message="一起乘船出游时留下的合影。">
           <div class="wall-image placeholder-three">
-            <img class="memory-photo" alt="A favorite shared memory">
-            <div class="photo-placeholder"><span>✧</span><strong>Photo 03</strong><small>Your best adventure</small></div>
+            <img class="memory-photo" alt="我们共同的回忆">
+            <div class="photo-placeholder"><span>✧</span><strong>船上合影</strong><small>海水真的很蓝，你笑得也很灿烂</small></div>
           </div>
-          <button class="memory-open" type="button"><span class="wall-number">03</span><span class="wall-label"><small>Memory three</small><strong>Best adventure</strong></span><span class="wall-arrow" aria-hidden="true">↗</span></button>
+          <button class="memory-open" type="button"><span class="wall-number">03</span><span class="wall-label"><small>回忆三</small><strong>船上合影</strong></span><span class="wall-arrow" aria-hidden="true">↗</span></button>
         </article>
 
-        <article class="wall-photo wall-square" data-title="The little things" data-message="Write about the small things you value here. Add a habit, a smile, or an ordinary moment that always makes you happy.">
+        <article class="wall-photo wall-square" data-title="不听不听" data-message="也不知道又是梦见啥了">
           <div class="wall-image placeholder-four">
-            <img class="memory-photo" alt="A favorite shared memory">
-            <div class="photo-placeholder"><span>☼</span><strong>Photo 04</strong><small>An everyday moment</small></div>
+            <img class="memory-photo" alt="我们共同的回忆">
+            <div class="photo-placeholder"><span>☼</span><strong>不听不听</strong><small>可爱的睡梦瞬间</small></div>
           </div>
-          <button class="memory-open" type="button"><span class="wall-number">04</span><span class="wall-label"><small>Memory four</small><strong>Little things</strong></span><span class="wall-arrow" aria-hidden="true">↗</span></button>
+          <button class="memory-open" type="button"><span class="wall-number">04</span><span class="wall-label"><small>回忆四</small><strong>不听不听</strong></span><span class="wall-arrow" aria-hidden="true">↗</span></button>
         </article>
 
-        <article class="wall-photo wall-wide" data-title="Through every season" data-message="Write about a hard day you faced together. Add how you worked through it and what the experience taught you.">
+        <article class="wall-photo wall-wide" data-title="一起吃饭" data-message="一不乐意就撅嘴，吃好吃的还撅嘴">
           <div class="wall-image placeholder-five">
-            <img class="memory-photo" alt="A favorite shared memory">
-            <div class="photo-placeholder"><span>☾</span><strong>Photo 05</strong><small>A meaningful day</small></div>
+            <img class="memory-photo" alt="我们共同的回忆">
+            <div class="photo-placeholder"><span>☾</span><strong>一起吃饭</strong><small>一起享受的一顿饭</small></div>
           </div>
-          <button class="memory-open" type="button"><span class="wall-number">05</span><span class="wall-label"><small>Memory five</small><strong>Every season</strong></span><span class="wall-arrow" aria-hidden="true">↗</span></button>
+          <button class="memory-open" type="button"><span class="wall-number">05</span><span class="wall-label"><small>回忆五</small><strong>一起吃饭</strong></span><span class="wall-arrow" aria-hidden="true">↗</span></button>
         </article>
 
-        <article class="wall-photo wall-tall" data-title="A day to remember" data-message="Write about one unforgettable day here. Add where you were, what happened, and why you both still remember it.">
+        <article class="wall-photo wall-tall" data-title="值得记住的一天" data-message="留下一张特别的照片，记住那天发生的事，以及它为什么对你们如此重要。">
           <div class="wall-image placeholder-six">
-            <img class="memory-photo" alt="A favorite shared memory">
-            <div class="photo-placeholder"><span>∞</span><strong>Photo 06</strong><small>Your newest photo</small></div>
+            <img class="memory-photo" alt="我们共同的回忆">
+            <div class="photo-placeholder"><span>∞</span></div>
           </div>
-          <button class="memory-open" type="button"><span class="wall-number">06</span><span class="wall-label"><small>Memory six</small><strong>A day to remember</strong></span><span class="wall-arrow" aria-hidden="true">↗</span></button>
+          <button class="memory-open" type="button" aria-label="打开第六段回忆"><span class="wall-number">06</span><span class="wall-arrow" aria-hidden="true">↗</span></button>
         </article>
 
-        <article class="wall-photo wall-square" data-title="Our funniest moment" data-message="Write your funniest shared memory here. Add the small detail that still makes both of you laugh.">
+        <article class="wall-photo wall-square" data-title="笑出声的瞬间" data-message="记下那个让你们忍不住笑出声的瞬间，留住最有趣的小细节。">
           <div class="wall-image placeholder-seven">
-            <img class="memory-photo" alt="A favorite shared memory">
-            <div class="photo-placeholder"><span>☺</span><strong>Photo 07</strong><small>Your funniest moment</small></div>
+            <img class="memory-photo" alt="我们共同的回忆">
+            <div class="photo-placeholder"><span>☺</span></div>
           </div>
-          <button class="memory-open" type="button"><span class="wall-number">07</span><span class="wall-label"><small>Memory seven</small><strong>Biggest laugh</strong></span><span class="wall-arrow" aria-hidden="true">↗</span></button>
+          <button class="memory-open" type="button" aria-label="打开第七段回忆"><span class="wall-number">07</span><span class="wall-arrow" aria-hidden="true">↗</span></button>
         </article>
 
-        <article class="wall-photo wall-large" data-title="My favorite photo" data-message="Write why this photo is special here. Add what was happening and what you wish you could tell that past version of you.">
+        <article class="wall-photo wall-large" data-title="最喜欢的一张" data-message="放上一张最喜欢的照片，记下它背后的故事，以及它为何如此特别。">
           <div class="wall-image placeholder-eight">
-            <img class="memory-photo" alt="A favorite shared memory">
-            <div class="photo-placeholder"><span>♡</span><strong>Photo 08</strong><small>Your favorite photo</small></div>
+            <img class="memory-photo" alt="我们共同的回忆">
+            <div class="photo-placeholder"><span>♡</span></div>
           </div>
-          <button class="memory-open" type="button"><span class="wall-number">08</span><span class="wall-label"><small>Memory eight</small><strong>Favorite photo</strong></span><span class="wall-arrow" aria-hidden="true">↗</span></button>
+          <button class="memory-open" type="button" aria-label="打开第八段回忆"><span class="wall-number">08</span><span class="wall-arrow" aria-hidden="true">↗</span></button>
         </article>
 
-        <article class="wall-photo wall-wide" data-title="Our second year" data-message="Write about the best parts of your second year here. Add the moments, places, and shared experiences you value most.">
+        <article class="wall-photo wall-wide" data-title="我们的第二年" data-message="挑选一些最珍惜的片段，回顾这一年一起走过的路、看过的风景和经历过的故事。">
           <div class="wall-image placeholder-nine">
-            <img class="memory-photo" alt="A favorite shared memory">
-            <div class="photo-placeholder"><span>II</span><strong>Photo 09</strong><small>Your anniversary photo</small></div>
+            <img class="memory-photo" alt="我们共同的回忆">
+            <div class="photo-placeholder"><span>II</span></div>
           </div>
-          <button class="memory-open" type="button"><span class="wall-number">09</span><span class="wall-label"><small>Memory nine</small><strong>Our second year</strong></span><span class="wall-arrow" aria-hidden="true">↗</span></button>
+          <button class="memory-open" type="button" aria-label="打开第九段回忆"><span class="wall-number">09</span><span class="wall-arrow" aria-hidden="true">↗</span></button>
         </article>
       </div>
-      <p class="drag-hint">Hover to zoom · Drop photos onto the wall · Open a note</p>
+      <p class="drag-hint">悬停欣赏照片 · 点击打开回忆</p>
     </section>
 
     <dialog class="memory-dialog" id="memoryDialog">
-      <button class="dialog-close" id="dialogClose" type="button" aria-label="Close memory">×</button>
-      <p class="eyebrow">A memory of us</p>
-      <h2 id="dialogTitle">Our memory</h2>
-      <p id="dialogMessage">Your message goes here.</p>
+      <button class="dialog-close" id="dialogClose" type="button" aria-label="关闭回忆">×</button>
+      <p class="eyebrow">我们的回忆</p>
+      <h2 id="dialogTitle">那一刻</h2>
+      <p id="dialogMessage">每一段共同经历，都值得好好珍藏。</p>
       <span class="dialog-heart" aria-hidden="true">♥</span>
     </dialog>
 
@@ -171,40 +166,40 @@
         <span class="orb-core">♥</span>
       </div>
       <div class="promise-copy reveal">
-        <p class="eyebrow">What these years gave us</p>
-        <blockquote>“The best memories came from everything we experienced together.”</blockquote>
+        <p class="eyebrow">两年里，最珍贵的收获</p>
+        <blockquote>“回头看，最难忘的不是去过哪里，而是每一段路，都有你在身旁。”</blockquote>
       </div>
     </section>
 
     <section class="letter section-pad" id="letter">
       <div class="letter-card reveal" id="letterCard">
         <div class="letter-topline">
-          <p class="eyebrow">Looking back</p>
-          <span>Year 01 — Year 02</span>
+          <p class="eyebrow">回望我们的两年</p>
+          <span>第一年 — 第二年</span>
         </div>
-        <h2>Two years to remember,</h2>
+        <h2>两年相伴，点滴皆珍藏</h2>
         <div class="letter-body">
-          <p>These two years gave us places, people, laughter, challenges, and moments that became part of our story.</p>
-          <p>We found new favorites, built small traditions, and turned ordinary days into memories worth keeping.</p>
-          <p>This page holds only a few of them. Every shared experience helped make these two years unforgettable.</p>
+          <p>一起看过的风景、分享过的欢笑，还有那些携手走过的日子，都成了只属于我们的故事。</p>
+          <p>我们有了新的喜欢，也养成了彼此熟悉的小习惯。寻常日子里的温柔瞬间，回想起来总是格外闪亮。</p>
+          <p>这一页装下的，只是两年时光的一小部分。愿未来的我们翻开它时，仍能想起那些一起走过的日子，也继续写下独属于我们的故事。</p>
         </div>
-        <p class="signature">For all our memories <span>♥</span></p>
+        <p class="signature">写给我们的两年，也写给往后的每一天 <span>♥</span></p>
         <div class="wax-seal" aria-hidden="true">II</div>
       </div>
     </section>
 
     <section class="finale section-pad">
       <div class="finale-hearts" id="finaleHearts" aria-hidden="true"></div>
-      <p class="eyebrow reveal">A collection worth keeping</p>
-      <h2 class="reveal">Two years of<br>shared memories.</h2>
-      <p class="finale-note reveal">Every photo holds part of our story.</p>
-      <a class="button button-light reveal" href="#memories">See them once more <span aria-hidden="true">↑</span></a>
+      <p class="eyebrow reveal">未完待续的故事</p>
+      <h2 class="reveal">两年相伴，<br>回忆未完待续。</h2>
+      <p class="finale-note reveal">每一张照片，都藏着一段只属于我们的故事。</p>
+      <a class="button button-light reveal" href="#memories">再看一遍这些回忆 <span aria-hidden="true">↑</span></a>
     </section>
   </main>
 
   <footer>
-    <span>Built from our memories</span>
-    <span>More still to come.</span>
+    <span>为我们的回忆而作</span>
+    <span>故事还在继续。</span>
   </footer>
 </body>
 </html>

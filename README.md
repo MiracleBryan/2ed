@@ -14,15 +14,9 @@ Then open <http://127.0.0.1:8080>.
 
 The Three.js file loads from jsDelivr, so previewing needs internet access.
 
-## Add photos
+## Add photos to the site
 
-### Quick preview
-
-Select **Add photos** on the page. You can also drop up to three image files onto the memory cards. These previews reset when the page reloads.
-
-### Keep photos on the site
-
-1. Add nine images to the `photos` folder.
+1. Add up to nine images to the `photos` folder.
 2. Name them `memory-1.jpg` through `memory-9.jpg`.
 3. Reload the page.
 

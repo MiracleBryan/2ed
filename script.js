@@ -119,8 +119,7 @@ for (let index = 0; index < 18; index += 1) {
   finaleHearts.appendChild(heart);
 }
 
-// Load saved photos, or preview files chosen and dropped by the visitor.
-const photoInput = document.querySelector("#photoInput");
+// Load the photos included with the site.
 const memoryPhotos = [...document.querySelectorAll(".memory-photo")];
 const savedPhotoPaths = [
   "photos/memory-1.jpg",
@@ -133,13 +132,11 @@ const savedPhotoPaths = [
   "photos/memory-8.jpg",
   "photos/memory-9.jpg",
 ];
-const previewUrls = [];
 
-function showPhoto(photo, source, label, isPreview = false) {
+function showPhoto(photo, source, label) {
   const art = photo.closest(".wall-image");
   photo.onload = () => {
     art.classList.add("has-photo");
-    if (isPreview) URL.revokeObjectURL(source);
   };
   photo.onerror = () => {
     art.classList.remove("has-photo");
@@ -150,45 +147,7 @@ function showPhoto(photo, source, label, isPreview = false) {
 }
 
 savedPhotoPaths.forEach((path, index) => {
-  showPhoto(memoryPhotos[index], path, `Shared memory ${index + 1}`);
-});
-
-function previewPhotos(fileList) {
-  const imageFiles = [...fileList]
-    .filter((file) => file.type.startsWith("image/"))
-    .slice(0, memoryPhotos.length);
-
-  imageFiles.forEach((file, index) => {
-    const source = URL.createObjectURL(file);
-    previewUrls.push(source);
-    showPhoto(memoryPhotos[index], source, file.name, true);
-  });
-}
-
-photoInput.addEventListener("change", (event) => {
-  previewPhotos(event.target.files);
-  event.target.value = "";
-});
-
-photoWall.addEventListener("dragenter", (event) => {
-  event.preventDefault();
-  photoWall.classList.add("drop-ready");
-});
-
-photoWall.addEventListener("dragover", (event) => {
-  event.preventDefault();
-});
-
-photoWall.addEventListener("dragleave", (event) => {
-  if (!photoWall.contains(event.relatedTarget)) {
-    photoWall.classList.remove("drop-ready");
-  }
-});
-
-photoWall.addEventListener("drop", (event) => {
-  event.preventDefault();
-  photoWall.classList.remove("drop-ready");
-  previewPhotos(event.dataTransfer.files);
+  showPhoto(memoryPhotos[index], path, `共同回忆第${index + 1}张`);
 });
 
 // Open each placeholder message inside an accessible note window.
